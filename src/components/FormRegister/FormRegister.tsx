@@ -5,6 +5,7 @@ import { Button } from "../UI";
 import { useEffect, useState } from "react";
 import { IFormRegister } from "@/interfaces/formRegisterInterface";
 import { useTranslations } from "next-intl";
+import { signupService } from "@/services/authService";
 export default function FormLogin():React.ReactElement{
     const translation = useTranslations("SignUpView");
     const [alertState, setAlertState] = useState<boolean>(false);
@@ -25,9 +26,14 @@ export default function FormLogin():React.ReactElement{
         });
         console.log(formDataRegister);
     };
-    const handleClick = ():void =>{
+    const handleClick = async():Promise<void> =>{
         if(!formDataRegister.email || !formDataRegister.username || !formDataRegister.password || !formDataRegister.name || !formDataRegister.phone){
             setAlertState(true);
+            return;
+        };
+        const data = await signupService(formDataRegister);
+        if(!data || "message" in data){
+            console.log("error");
             return;
         }
     }
