@@ -4,7 +4,7 @@ import "./globals.css";
 import { Header, Footer } from "@/components";
 import { getMessages, getLocale } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
-
+import ProviderRedux from "./ProviderRedux";
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -32,9 +32,11 @@ export default async function RootLayout({
     <html lang={locale}>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <NextIntlClientProvider messages={messages}>
+          <ProviderRedux>
           <Header />
-          {children}
-          <Footer />
+            {children}
+            <Footer />
+          </ProviderRedux>
         </NextIntlClientProvider>
       </body>
     </html>

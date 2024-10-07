@@ -1,14 +1,17 @@
 "use client";
 import "./formRegisterStyles.css";
 import {GroupInput} from "../index";
-import { Button } from "../UI";
+import { Button, InputAlert } from "../UI";
 import { useEffect, useState } from "react";
 import { IFormRegister } from "@/interfaces/formRegisterInterface";
 import { useTranslations } from "next-intl";
 import { signupService } from "@/services/authService";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 export default function FormLogin():React.ReactElement{
     const translation = useTranslations("SignUpView");
     const [alertState, setAlertState] = useState<boolean>(false);
+    const router = useRouter();
     const formRegisterInitial: IFormRegister = { //Create new state intial for the formRegister
         email: "",
         username: "",
@@ -24,7 +27,6 @@ export default function FormLogin():React.ReactElement{
             ...formDataRegister,
             [name]: value
         });
-        console.log(formDataRegister);
     };
     const handleClick = async():Promise<void> =>{
         if(!formDataRegister.email || !formDataRegister.username || !formDataRegister.password || !formDataRegister.name || !formDataRegister.phone){
@@ -33,9 +35,11 @@ export default function FormLogin():React.ReactElement{
         };
         const data = await signupService(formDataRegister);
         if(!data || "message" in data){
-            console.log("error");
+            InputAlert("Error to register", "error");
             return;
         }
+        InputAlert("User registered correctly", "success");
+        router.push("/dashboard")
     }
 
     useEffect(()=>{
@@ -101,7 +105,7 @@ export default function FormLogin():React.ReactElement{
             stateAlert={false}
             placeholder="+57 0123456789"
             />
-
+            <Link href={"/login"}>{translation("textLink")}</Link>
             <Button
             type="button"
             text={translation("button")}

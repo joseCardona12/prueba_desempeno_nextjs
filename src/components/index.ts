@@ -4,6 +4,7 @@ import FormLogin from "./FormLogin/FormLogin";
 import FormRegister from "./FormRegister/FormRegister";
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
+import SectionCard from "./SectionCard/SectionCard";
 
 export {
     GroupInput,
@@ -11,5 +12,6 @@ export {
     FormLogin,
     FormRegister,
     Header,
-    Footer
+    Footer,
+    SectionCard
 }

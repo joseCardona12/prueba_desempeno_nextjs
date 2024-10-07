@@ -4,7 +4,7 @@ form.form-login{
     gap: var(--padding-medium);
     border-radius: var(--padding-small);
     padding: var(--padding-medium);
-    width: 30%;
+    width: 25%;
     background-color: var(--color-white);
     box-shadow: var(--box-shadow);
 };

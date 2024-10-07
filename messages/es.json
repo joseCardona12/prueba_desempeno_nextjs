@@ -9,7 +9,11 @@
         
     },
     "LoginView": {
-
+        "titleForm": "Loguearse",
+        "button": "Loguearse",
+        "fieldUsername": "Usuario",
+        "fieldPassword": "Contraseña",
+        "textLink": "¿No tienes cuenta?"
     },
     "SignUpView": {
         "title": "Welcome to project Store",
@@ -19,6 +23,7 @@
         "fieldPassword": "Contraseña",
         "fieldUsername": "Usuario",
         "fieldName": "Nombre",
-        "fieldPhone": "Teléfono"
+        "fieldPhone": "Teléfono",
+        "textLink": "¿Tienes cuenta?"
     }
 }

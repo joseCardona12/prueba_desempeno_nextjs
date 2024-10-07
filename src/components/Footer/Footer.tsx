@@ -2,11 +2,9 @@
 import styled from "styled-components";
 const FooterStyled = styled.footer
 `
-height: 50px;
-position: absolute;
-right: 5%;
-bottom: 0;
-height: 10%;
+display:flex;
+justify-content:center;
+
 `;
 export default function Footer():React.ReactElement{
     return(

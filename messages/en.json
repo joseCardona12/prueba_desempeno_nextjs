@@ -9,7 +9,11 @@
         
     },
     "LoginView": {
-
+        "titleForm": "Login",
+        "button": "Login",
+        "fieldUsername": "Username",
+        "fieldPassword": "Password",
+        "textLink": "Do you not an account?"
     },
     "SignUpView": {
         "title": "Welcome to project Store",
@@ -19,6 +23,7 @@
         "fieldPassword": "Password",
         "fieldUsername": "Username",
         "fieldName": "Name",
-        "fieldPhone": "Phone"
+        "fieldPhone": "Phone",
+        "textLink": "Do you an account?"
     }
 }
