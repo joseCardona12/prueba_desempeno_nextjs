@@ -3,6 +3,7 @@ import React from "react";
 import Link from "next/link";
 import { INavbarDataInterface } from "@/interfaces/navbarInterface";
 import { FaHome,FaUserCheck,FaUser  } from "react-icons/fa";
+import { SelectLanguage } from "../UI";
 import "./headerStyles.css";
 
 
@@ -24,6 +25,7 @@ export default function Header():React.ReactElement {
                         {name}
                     </Link>
                 ))}
+                <SelectLanguage />
             </div>
         </header>
     )
