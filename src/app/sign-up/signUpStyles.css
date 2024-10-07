@@ -1,0 +1,25 @@
+main.main-register{
+    padding: var(--padding-small) var(--padding-large);
+    height: 80%;
+}
+
+main.main-register > div.register-content-hero{
+    background-color: var(--color-blue);
+    color: var(--color-white);
+    padding: var(--padding-large);
+    border-radius: var(--border-radius-large);
+    height: 60vh;
+    background-image: url("/images/hero.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--paragraph-color);
+    position: relative;
+}
+
+main.main-register > div.register-content-hero > h2{
+    font-size: 2.2rem;
+}

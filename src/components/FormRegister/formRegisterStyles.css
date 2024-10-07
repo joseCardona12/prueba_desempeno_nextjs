@@ -1,0 +1,14 @@
+form.form-register{
+    background-color: var(--color-white);
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    padding: var(--padding-medium);
+    border-radius: var(--border-radius-medium);
+    width: 30%;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-small);
+    color: var(--paragraph-color);  
+}

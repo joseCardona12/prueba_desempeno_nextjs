@@ -1,7 +1,12 @@
 :root{ 
   --background-color-main: #;
   --color-white:#fff;
-  --padding-small: 16px;
+  --color-gray: #b4b4b4;
+  --color-blue: #4e57fa;
+  --color-red: #ff0000;
+  --color-blue-hover: #2831e7;
+  --paragraph-color: #1d1d1d;
+  --padding-small: 12px;
   --padding-medium: 32px;
   --padding-large: 64px;
   --margin-small: 16px;
@@ -11,6 +16,7 @@
   --border-radius-medium: 8px;
   --border-radius-large: 16px;
   --font-family-main: "system-ui", sans-serif;  
+  --box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 html {
@@ -26,4 +32,6 @@ h1,h2,h3,h4,h5,h6 {
 }
 body {
   font-family: var(--font-family-main);
+  margin: 0 auto;
+  height: 100vh;
 }

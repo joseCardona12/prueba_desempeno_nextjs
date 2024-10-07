@@ -1,0 +1,10 @@
+input.input{
+    border-radius: var(--border-radius-small);
+    padding: var(--padding-small);
+    border: 1px solid var(--color-gray);
+    outline: none;
+}
+
+input.input:hover, input.input:focus{
+    border: 1px solid var(--color-blue);
+}

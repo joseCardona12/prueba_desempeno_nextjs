@@ -1,4 +1,5 @@
 "use client";
+import "./formLoginStyles.css";
 import { IFormLogin } from "@/interfaces/formLoginInterface";
 import {GroupInput} from "../index";
 import { Button } from "../UI";
@@ -20,12 +21,14 @@ export default function FormLogin():React.ReactElement{
         console.log(formDataLogin);
     };
     const handleClick = ():void =>{
-        console.log(formDataLogin);
+        if(!formDataLogin.username){
+            alert("Please enter your username");
+        }
     }
     return(
-        <form>
-            <div>
-                <h2>Form Login</h2>
+        <form className="form-login">
+            <div className="login-title">
+                <h2 className="title">Form Login</h2>
             </div>
             <GroupInput
             label="username"

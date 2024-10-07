@@ -1,0 +1,14 @@
+div.group-input{
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-small);
+}
+
+div.group-input > label.input-label{
+    font-weight: bold;
+}
+
+div.group-input > p.alert-validation{
+    color: var(--color-red);
+    margin-top: 0;
+}

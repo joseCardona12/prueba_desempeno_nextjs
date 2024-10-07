@@ -1,10 +1,11 @@
 "use client";
+import "./formRegisterStyles.css";
 import {GroupInput} from "../index";
 import { Button } from "../UI";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IFormRegister } from "@/interfaces/formRegisterInterface";
 export default function FormLogin():React.ReactElement{
-
+    const [alertState, setAlertState] = useState<boolean>(false);
     const formRegisterInitial: IFormRegister = { //Create new state intial for the formRegister
         email: "",
         username: "",
@@ -23,57 +24,79 @@ export default function FormLogin():React.ReactElement{
         console.log(formDataRegister);
     };
     const handleClick = ():void =>{
-        console.log(formDataRegister);
+        if(!formDataRegister.email || !formDataRegister.username || !formDataRegister.password || !formDataRegister.name || !formDataRegister.phone){
+            setAlertState(true);
+            return;
+        }
     }
+
+    useEffect(()=>{
+        setAlertState(false)
+    }, [formDataRegister]);
     return(
-        <form>
-            <div>
-                <h2>Sign Up</h2>
+        <form className="form-register">
+            <div className="register-title">
+                <h2 className="title">Sign Up</h2>
             </div>
 
             <GroupInput
-            label="Email: "
+            label="Email"
             type="email"
             name="email"
             value={formDataRegister.email}
             onChange={(e)=>handleChange(e)}
+            alert="Please enter your email"
+            stateAlert={alertState}
+            placeholder="example@gmail.com"
             />
 
             <GroupInput
-            label="Username: "
+            label="Username"
             type="text"
             name="username"
             value={formDataRegister.username}
             onChange={(e)=>handleChange(e)}
+            alert="Pleaser enter your username"
+            stateAlert={alertState}
+            placeholder="example123"
             />
 
             <GroupInput
-            label="Password: "
+            label="Password"
             type="password"
             name="password"
             value={formDataRegister.password}
             onChange={(e)=>handleChange(e)}
+            alert="Please enter your password"
+            stateAlert={alertState}
+            placeholder="********"
             />
 
             <GroupInput
-            label="Name: "
+            label="Name"
             type="name"
             name="name"
             value={formDataRegister.name}
             onChange={(e)=>handleChange(e)}
+            alert="Please enter your name"
+            stateAlert={false}
+            placeholder="example"
             />
 
             <GroupInput
-            label="Phone:"
+            label="Phone"
             type="phone"
             name="phone"
             value={formDataRegister.phone}
             onChange={(e)=>handleChange(e)}
+            alert="Please enter your phone number"
+            stateAlert={false}
+            placeholder="+57 0123456789"
             />
 
             <Button
             type="button"
-            text="Login"
+            text="Register"
             onClick={handleClick}
             />
         </form>
