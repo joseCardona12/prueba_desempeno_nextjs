@@ -1,0 +1,16 @@
+
+/* Styles for container header*/
+header.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 var(--padding-medium);
+    height: 60px;
+    background-color: var(--color-white);
+};
+
+header.header-container > div.container-navbar{
+    display: flex;
+    align-items: center;
+    padding: var(--padding-medium);
+}
