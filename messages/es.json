@@ -1,0 +1,24 @@
+{
+    "Header": {
+        "brand": "storeCardona",
+        "homeIcon": "Inicio",
+        "loginIcon": "Ingresar",
+        "signUpIcon": "Registrarse"
+    },
+    "HomeView": {
+        
+    },
+    "LoginView": {
+
+    },
+    "SignUpView": {
+        "title": "Welcome to project Store",
+        "titleForm": "Registrarse",
+        "button": "Registrarse",
+        "fieldEmail": "Correo",
+        "fieldPassword": "Contraseña",
+        "fieldUsername": "Usuario",
+        "fieldName": "Nombre",
+        "fieldPhone": "Teléfono"
+    }
+}

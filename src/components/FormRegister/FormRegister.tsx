@@ -4,7 +4,9 @@ import {GroupInput} from "../index";
 import { Button } from "../UI";
 import { useEffect, useState } from "react";
 import { IFormRegister } from "@/interfaces/formRegisterInterface";
+import { useTranslations } from "next-intl";
 export default function FormLogin():React.ReactElement{
+    const translation = useTranslations("SignUpView");
     const [alertState, setAlertState] = useState<boolean>(false);
     const formRegisterInitial: IFormRegister = { //Create new state intial for the formRegister
         email: "",
@@ -36,11 +38,11 @@ export default function FormLogin():React.ReactElement{
     return(
         <form className="form-register">
             <div className="register-title">
-                <h2 className="title">Sign Up</h2>
+                <h2 className="title">{translation("titleForm")}</h2>
             </div>
 
             <GroupInput
-            label="Email"
+            label={translation("fieldEmail")}
             type="email"
             name="email"
             value={formDataRegister.email}
@@ -51,7 +53,7 @@ export default function FormLogin():React.ReactElement{
             />
 
             <GroupInput
-            label="Username"
+            label={translation("fieldUsername")}
             type="text"
             name="username"
             value={formDataRegister.username}
@@ -62,7 +64,7 @@ export default function FormLogin():React.ReactElement{
             />
 
             <GroupInput
-            label="Password"
+            label={translation("fieldPassword")}
             type="password"
             name="password"
             value={formDataRegister.password}
@@ -73,7 +75,7 @@ export default function FormLogin():React.ReactElement{
             />
 
             <GroupInput
-            label="Name"
+            label={translation("fieldName")}
             type="name"
             name="name"
             value={formDataRegister.name}
@@ -84,7 +86,7 @@ export default function FormLogin():React.ReactElement{
             />
 
             <GroupInput
-            label="Phone"
+            label={translation("fieldPhone")}
             type="phone"
             name="phone"
             value={formDataRegister.phone}
@@ -96,7 +98,7 @@ export default function FormLogin():React.ReactElement{
 
             <Button
             type="button"
-            text="Register"
+            text={translation("button")}
             onClick={handleClick}
             />
         </form>
